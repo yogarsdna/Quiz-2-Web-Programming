@@ -10,13 +10,11 @@ using Quiz2_PWEB.Models;
 
 namespace Quiz2_PWEB.Controllers
 {
-    [Authorize(Roles ="Teacher")]
     public class StudentsController : Controller
     {
         private SchoolManagement_DBEntities db = new SchoolManagement_DBEntities();
 
         // GET: Students
-        [AllowAnonymous]
         public ActionResult Index()
         {
             return View(db.Students.ToList());
